@@ -1,0 +1,1006 @@
+root@b9faee63f343:/OCRFlux# CUDA_VISIBLE_DEVICES=1 VLLM_ENFORCE_EAGER=1 PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True python ocrflux/pipeline.py workspace3 --data /test_pdf_dir/333.pdf  --model /OCRFlux-3B --tensor_parallel_size 1 --max_page_retries 3   --gpu_memory_utilization 0.6 --port 40079
+2025-08-17 01:17:33,575 - __main__ - INFO - Loading file at /test_pdf_dir/333.pdf as PDF document
+2025-08-17 01:17:33,576 - __main__ - INFO - Found 1 total pdf paths to add
+Sampling PDFs to calculate optimal length: 100%|███████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 179.60it/s]
+2025-08-17 01:17:33,586 - __main__ - INFO - Calculated items_per_group: 500 based on average pages per PDF: 1.00
+2025-08-17 01:17:35,084 - __main__ - INFO - Starting pipeline with PID 20591
+2025-08-17 01:17:35,085 - __main__ - INFO - Using local model path at '/OCRFlux-3B'
+2025-08-17 01:17:35,236 - __main__ - WARNING - Attempt 1: Please wait for vllm server to become ready...
+2025-08-17 01:17:36,299 - __main__ - WARNING - Attempt 2: Please wait for vllm server to become ready...
+2025-08-17 01:17:37,363 - __main__ - WARNING - Attempt 3: Please wait for vllm server to become ready...
+2025-08-17 01:17:38,427 - __main__ - WARNING - Attempt 4: Please wait for vllm server to become ready...
+2025-08-17 01:17:39,490 - __main__ - WARNING - Attempt 5: Please wait for vllm server to become ready...
+2025-08-17 01:17:39,627 - __main__ - INFO - INFO 08-17 01:17:39 __init__.py:207] Automatically detected platform cuda.
+2025-08-17 01:17:39,661 - __main__ - INFO - INFO 08-17 01:17:39 api_server.py:912] vLLM API server version 0.7.3
+2025-08-17 01:17:39,661 - __main__ - INFO - INFO 08-17 01:17:39 api_server.py:913] args: Namespace(subparser='serve', model_tag='/OCRFlux-3B', config='', host=None, port=40079, uvicorn_log_level='info', allow_credentials=False, allowed_origins=['*'], allowed_methods=['*'], allowed_headers=['*'], api_key=None, lora_modules=None, prompt_adapters=None, chat_template=None, chat_template_content_format='auto', response_role='assistant', ssl_keyfile=None, ssl_certfile=None, ssl_ca_certs=None, ssl_cert_reqs=0, root_path=None, middleware=[], return_tokens_as_token_ids=False, disable_frontend_multiprocessing=False, enable_request_id_headers=False, enable_auto_tool_choice=False, enable_reasoning=False, reasoning_parser=None, tool_call_parser=None, tool_parser_plugin='', model='/OCRFlux-3B', task='auto', tokenizer=None, skip_tokenizer_init=False, revision=None, code_revision=None, tokenizer_revision=None, tokenizer_mode='auto', trust_remote_code=False, allowed_local_media_path=None, download_dir=None, load_format='auto', config_format=<ConfigFormat.AUTO: 'auto'>, dtype='auto', kv_cache_dtype='auto', max_model_len=16384, guided_decoding_backend='xgrammar', logits_processor_pattern=None, model_impl='auto', distributed_executor_backend=None, pipeline_parallel_size=1, tensor_parallel_size=1, max_parallel_loading_workers=None, ray_workers_use_nsight=False, block_size=None, enable_prefix_caching=None, disable_sliding_window=False, use_v2_block_manager=True, num_lookahead_slots=0, seed=0, swap_space=4, cpu_offload_gb=0, gpu_memory_utilization=0.6, num_gpu_blocks_override=None, max_num_batched_tokens=None, max_num_partial_prefills=1, max_long_partial_prefills=1, long_prefill_token_threshold=0, max_num_seqs=None, max_logprobs=20, disable_log_stats=False, quantization=None, rope_scaling=None, rope_theta=None, hf_overrides=None, enforce_eager=False, max_seq_len_to_capture=8192, disable_custom_all_reduce=False, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config=None, limit_mm_per_prompt=None, mm_processor_kwargs=None, disable_mm_preprocessor_cache=False, enable_lora=False, enable_lora_bias=False, max_loras=1, max_lora_rank=16, lora_extra_vocab_size=256, lora_dtype='auto', long_lora_scaling_factors=None, max_cpu_loras=None, fully_sharded_loras=False, enable_prompt_adapter=False, max_prompt_adapters=1, max_prompt_adapter_token=0, device='auto', num_scheduler_steps=1, multi_step_stream_outputs=True, scheduler_delay_factor=0.0, enable_chunked_prefill=None, speculative_model=None, speculative_model_quantization=None, num_speculative_tokens=None, speculative_disable_mqa_scorer=False, speculative_draft_tensor_parallel_size=None, speculative_max_model_len=None, speculative_disable_by_batch_size=None, ngram_prompt_lookup_max=None, ngram_prompt_lookup_min=None, spec_decoding_acceptance_method='rejection_sampler', typical_acceptance_sampler_posterior_threshold=None, typical_acceptance_sampler_posterior_alpha=None, disable_logprobs_during_spec_decoding=None, model_loader_extra_config=None, ignore_patterns=[], preemption_mode=None, served_model_name=None, qlora_adapter_name_or_path=None, otlp_traces_endpoint=None, collect_detailed_traces=None, disable_async_output_proc=False, scheduling_policy='fcfs', scheduler_cls='vllm.core.scheduler.Scheduler', override_neuron_config=None, override_pooler_config=None, compilation_config=None, kv_transfer_config=None, worker_cls='auto', generation_config=None, override_generation_config=None, enable_sleep_mode=False, calculate_kv_scales=False, additional_config=None, disable_log_requests=False, max_log_len=None, disable_fastapi_docs=False, enable_prompt_tokens_details=False, dispatch_function=<function ServeSubcommand.cmd at 0x7f3da6e0ed40>)
+2025-08-17 01:17:39,694 - __main__ - INFO - INFO 08-17 01:17:39 api_server.py:209] Started engine process with PID 20729
+2025-08-17 01:17:40,542 - __main__ - WARNING - Attempt 6: Please wait for vllm server to become ready...
+2025-08-17 01:17:41,588 - __main__ - WARNING - Attempt 7: Please wait for vllm server to become ready...
+2025-08-17 01:17:42,634 - __main__ - WARNING - Attempt 8: Please wait for vllm server to become ready...
+2025-08-17 01:17:43,680 - __main__ - WARNING - Attempt 9: Please wait for vllm server to become ready...
+2025-08-17 01:17:43,958 - __main__ - INFO - INFO 08-17 01:17:43 __init__.py:207] Automatically detected platform cuda.
+2025-08-17 01:17:44,774 - __main__ - WARNING - Attempt 10: Please wait for vllm server to become ready...
+2025-08-17 01:17:45,608 - __main__ - INFO - INFO 08-17 01:17:45 config.py:549] This model supports multiple tasks: {'classify', 'generate', 'score', 'embed', 'reward'}. Defaulting to 'generate'.
+2025-08-17 01:17:45,872 - __main__ - WARNING - Attempt 11: Please wait for vllm server to become ready...
+2025-08-17 01:17:46,985 - __main__ - WARNING - Attempt 12: Please wait for vllm server to become ready...
+2025-08-17 01:17:48,094 - __main__ - WARNING - Attempt 13: Please wait for vllm server to become ready...
+2025-08-17 01:17:49,199 - __main__ - WARNING - Attempt 14: Please wait for vllm server to become ready...
+2025-08-17 01:17:49,561 - __main__ - INFO - INFO 08-17 01:17:49 config.py:549] This model supports multiple tasks: {'embed', 'generate', 'score', 'classify', 'reward'}. Defaulting to 'generate'.
+2025-08-17 01:17:49,563 - __main__ - INFO - INFO 08-17 01:17:49 llm_engine.py:234] Initializing a V0 LLM engine (v0.7.3) with config: model='/OCRFlux-3B', speculative_config=None, tokenizer='/OCRFlux-3B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=16384, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='xgrammar'), observability_config=ObservabilityConfig(otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=0, served_model_name=/OCRFlux-3B, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=False, chunked_prefill_enabled=False, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"splitting_ops":[],"compile_sizes":[],"cudagraph_capture_sizes":[256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":256}, use_cached_outputs=True,
+2025-08-17 01:17:50,301 - __main__ - WARNING - Attempt 15: Please wait for vllm server to become ready...
+2025-08-17 01:17:51,169 - __main__ - INFO - INFO 08-17 01:17:51 cuda.py:229] Using Flash Attention backend.
+2025-08-17 01:17:51,393 - __main__ - WARNING - Attempt 16: Please wait for vllm server to become ready...
+2025-08-17 01:17:51,509 - __main__ - INFO - [W817 01:17:51.430545690 CUDAAllocatorConfig.h:28] Warning: expandable_segments not supported on this platform (function operator())
+2025-08-17 01:17:51,530 - __main__ - INFO - INFO 08-17 01:17:51 model_runner.py:1110] Starting to load model /OCRFlux-3B...
+2025-08-17 01:17:51,751 - __main__ - INFO - WARNING 08-17 01:17:51 vision.py:94] Current `vllm-flash-attn` has a bug inside vision module, so we use xformers backend instead. You can run `pip install flash-attn` to use flash-attention backend.
+2025-08-17 01:17:51,794 - __main__ - INFO - INFO 08-17 01:17:51 config.py:3054] cudagraph sizes specified by model runner [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256] is overridden by config [256, 128, 2, 1, 4, 136, 8, 144, 16, 152, 24, 160, 32, 168, 40, 176, 48, 184, 56, 192, 64, 200, 72, 208, 80, 216, 88, 120, 224, 96, 232, 104, 240, 112, 248]
+Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+2025-08-17 01:17:52,509 - __main__ - WARNING - Attempt 17: Please wait for vllm server to become ready...
+2025-08-17 01:17:53,607 - __main__ - WARNING - Attempt 18: Please wait for vllm server to become ready...
+2025-08-17 01:17:54,712 - __main__ - WARNING - Attempt 19: Please wait for vllm server to become ready...
+2025-08-17 01:17:55,818 - __main__ - WARNING - Attempt 20: Please wait for vllm server to become ready...
+2025-08-17 01:17:56,912 - __main__ - WARNING - Attempt 21: Please wait for vllm server to become ready...
+2025-08-17 01:17:58,017 - __main__ - WARNING - Attempt 22: Please wait for vllm server to become ready...
+2025-08-17 01:17:59,131 - __main__ - WARNING - Attempt 23: Please wait for vllm server to become ready...
+2025-08-17 01:18:00,207 - __main__ - WARNING - Attempt 24: Please wait for vllm server to become ready...
+2025-08-17 01:18:01,290 - __main__ - WARNING - Attempt 25: Please wait for vllm server to become ready...
+2025-08-17 01:18:02,393 - __main__ - WARNING - Attempt 26: Please wait for vllm server to become ready...
+2025-08-17 01:18:03,511 - __main__ - WARNING - Attempt 27: Please wait for vllm server to become ready...
+2025-08-17 01:18:04,598 - __main__ - WARNING - Attempt 28: Please wait for vllm server to become ready...
+2025-08-17 01:18:05,709 - __main__ - WARNING - Attempt 29: Please wait for vllm server to become ready...
+2025-08-17 01:18:06,775 - __main__ - WARNING - Attempt 30: Please wait for vllm server to become ready...
+2025-08-17 01:18:07,841 - __main__ - WARNING - Attempt 31: Please wait for vllm server to become ready...
+2025-08-17 01:18:08,908 - __main__ - WARNING - Attempt 32: Please wait for vllm server to become ready...
+2025-08-17 01:18:09,975 - __main__ - WARNING - Attempt 33: Please wait for vllm server to become ready...
+2025-08-17 01:18:11,067 - __main__ - WARNING - Attempt 34: Please wait for vllm server to become ready...
+2025-08-17 01:18:12,189 - __main__ - WARNING - Attempt 35: Please wait for vllm server to become ready...
+2025-08-17 01:18:13,322 - __main__ - WARNING - Attempt 36: Please wait for vllm server to become ready...
+2025-08-17 01:18:14,447 - __main__ - WARNING - Attempt 37: Please wait for vllm server to become ready...
+2025-08-17 01:18:15,547 - __main__ - WARNING - Attempt 38: Please wait for vllm server to become ready...
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:23<00:23, 23.83s/it]
+2025-08-17 01:18:16,667 - __main__ - WARNING - Attempt 39: Please wait for vllm server to become ready...
+2025-08-17 01:18:17,789 - __main__ - WARNING - Attempt 40: Please wait for vllm server to become ready...
+2025-08-17 01:18:18,909 - __main__ - WARNING - Attempt 41: Please wait for vllm server to become ready...
+2025-08-17 01:18:20,009 - __main__ - WARNING - Attempt 42: Please wait for vllm server to become ready...
+2025-08-17 01:18:21,129 - __main__ - WARNING - Attempt 43: Please wait for vllm server to become ready...
+2025-08-17 01:18:22,218 - __main__ - WARNING - Attempt 44: Please wait for vllm server to become ready...
+2025-08-17 01:18:23,306 - __main__ - WARNING - Attempt 45: Please wait for vllm server to become ready...
+2025-08-17 01:18:24,395 - __main__ - WARNING - Attempt 46: Please wait for vllm server to become ready...
+2025-08-17 01:18:25,484 - __main__ - WARNING - Attempt 47: Please wait for vllm server to become ready...
+2025-08-17 01:18:26,588 - __main__ - WARNING - Attempt 48: Please wait for vllm server to become ready...
+2025-08-17 01:18:27,719 - __main__ - WARNING - Attempt 49: Please wait for vllm server to become ready...
+2025-08-17 01:18:28,845 - __main__ - WARNING - Attempt 50: Please wait for vllm server to become ready...
+2025-08-17 01:18:29,968 - __main__ - WARNING - Attempt 51: Please wait for vllm server to become ready...
+2025-08-17 01:18:31,089 - __main__ - WARNING - Attempt 52: Please wait for vllm server to become ready...
+2025-08-17 01:18:32,210 - __main__ - WARNING - Attempt 53: Please wait for vllm server to become ready...
+2025-08-17 01:18:33,343 - __main__ - WARNING - Attempt 54: Please wait for vllm server to become ready...
+2025-08-17 01:18:34,467 - __main__ - WARNING - Attempt 55: Please wait for vllm server to become ready...
+2025-08-17 01:18:35,537 - __main__ - WARNING - Attempt 56: Please wait for vllm server to become ready...
+2025-08-17 01:18:36,610 - __main__ - WARNING - Attempt 57: Please wait for vllm server to become ready...
+2025-08-17 01:18:37,683 - __main__ - WARNING - Attempt 58: Please wait for vllm server to become ready...
+2025-08-17 01:18:38,761 - __main__ - WARNING - Attempt 59: Please wait for vllm server to become ready...
+2025-08-17 01:18:39,859 - __main__ - WARNING - Attempt 60: Please wait for vllm server to become ready...
+2025-08-17 01:18:40,985 - __main__ - WARNING - Attempt 61: Please wait for vllm server to become ready...
+2025-08-17 01:18:42,095 - __main__ - WARNING - Attempt 62: Please wait for vllm server to become ready...
+2025-08-17 01:18:43,193 - __main__ - WARNING - Attempt 63: Please wait for vllm server to become ready...
+2025-08-17 01:18:44,283 - __main__ - WARNING - Attempt 64: Please wait for vllm server to become ready...
+2025-08-17 01:18:45,406 - __main__ - WARNING - Attempt 65: Please wait for vllm server to become ready...
+2025-08-17 01:18:46,528 - __main__ - WARNING - Attempt 66: Please wait for vllm server to become ready...
+2025-08-17 01:18:47,613 - __main__ - WARNING - Attempt 67: Please wait for vllm server to become ready...
+2025-08-17 01:18:48,727 - __main__ - WARNING - Attempt 68: Please wait for vllm server to become ready...
+2025-08-17 01:18:49,827 - __main__ - WARNING - Attempt 69: Please wait for vllm server to become ready...
+2025-08-17 01:18:50,944 - __main__ - WARNING - Attempt 70: Please wait for vllm server to become ready...
+2025-08-17 01:18:52,062 - __main__ - WARNING - Attempt 71: Please wait for vllm server to become ready...
+2025-08-17 01:18:53,181 - __main__ - WARNING - Attempt 72: Please wait for vllm server to become ready...
+2025-08-17 01:18:54,280 - __main__ - WARNING - Attempt 73: Please wait for vllm server to become ready...
+2025-08-17 01:18:55,368 - __main__ - WARNING - Attempt 74: Please wait for vllm server to become ready...
+2025-08-17 01:18:56,468 - __main__ - WARNING - Attempt 75: Please wait for vllm server to become ready...
+2025-08-17 01:18:57,568 - __main__ - WARNING - Attempt 76: Please wait for vllm server to become ready...
+2025-08-17 01:18:58,668 - __main__ - WARNING - Attempt 77: Please wait for vllm server to become ready...
+2025-08-17 01:18:59,780 - __main__ - WARNING - Attempt 78: Please wait for vllm server to become ready...
+2025-08-17 01:19:00,905 - __main__ - WARNING - Attempt 79: Please wait for vllm server to become ready...
+2025-08-17 01:19:02,027 - __main__ - WARNING - Attempt 80: Please wait for vllm server to become ready...
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [01:10<00:00, 37.52s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [01:10<00:00, 35.47s/it]
+2025-08-17 01:19:02,843 - __main__ - INFO - 
+2025-08-17 01:19:03,136 - __main__ - WARNING - Attempt 81: Please wait for vllm server to become ready...
+2025-08-17 01:19:03,324 - __main__ - INFO - INFO 08-17 01:19:03 model_runner.py:1115] Loading model weights took 7.1147 GB
+2025-08-17 01:19:03,944 - __main__ - INFO - Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.50, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+2025-08-17 01:19:03,945 - __main__ - INFO - WARNING 08-17 01:19:03 model_runner.py:1288] Computed max_num_seqs (min(256, 16384 // 32768)) to be less than 1. Setting it to the minimum value of 1.
+2025-08-17 01:19:04,252 - __main__ - WARNING - Attempt 82: Please wait for vllm server to become ready...
+2025-08-17 01:19:05,370 - __main__ - WARNING - Attempt 83: Please wait for vllm server to become ready...
+2025-08-17 01:19:06,489 - __main__ - WARNING - Attempt 84: Please wait for vllm server to become ready...
+2025-08-17 01:19:07,616 - __main__ - WARNING - Attempt 85: Please wait for vllm server to become ready...
+2025-08-17 01:19:07,679 - __main__ - INFO - It looks like you are trying to rescale already rescaled images. If the input images have pixel values between 0 and 1, set `do_rescale=False` to avoid rescaling them again.
+2025-08-17 01:19:08,732 - __main__ - WARNING - Attempt 86: Please wait for vllm server to become ready...
+2025-08-17 01:19:09,837 - __main__ - WARNING - Attempt 87: Please wait for vllm server to become ready...
+2025-08-17 01:19:10,962 - __main__ - WARNING - Attempt 88: Please wait for vllm server to become ready...
+2025-08-17 01:19:11,328 - __main__ - INFO - WARNING 08-17 01:19:11 profiling.py:192] The context length (16384) of the model is too short to hold the multi-modal embeddings in the worst case (32768 tokens in total, out of which {'image': 16384, 'video': 16384} are reserved for multi-modal embeddings). This may cause certain multi-modal inputs to fail during inference, even when the input text is short. To avoid this, you should increase `max_model_len`, reduce `max_num_seqs`, and/or reduce `mm_counts`.
+2025-08-17 01:19:12,085 - __main__ - WARNING - Attempt 89: Please wait for vllm server to become ready...
+2025-08-17 01:19:13,171 - __main__ - WARNING - Attempt 90: Please wait for vllm server to become ready...
+2025-08-17 01:19:13,526 - __main__ - INFO - INFO 08-17 01:19:13 worker.py:267] Memory profiling takes 10.05 seconds
+2025-08-17 01:19:13,526 - __main__ - INFO - INFO 08-17 01:19:13 worker.py:267] the current vLLM instance can use total_gpu_memory (44.40GiB) x gpu_memory_utilization (0.60) = 26.64GiB
+2025-08-17 01:19:13,527 - __main__ - INFO - INFO 08-17 01:19:13 worker.py:267] model weights take 7.11GiB; non_torch_memory takes 0.06GiB; PyTorch activation peak memory takes 1.27GiB; the rest of the memory reserved for KV Cache is 18.20GiB.
+2025-08-17 01:19:13,677 - __main__ - INFO - INFO 08-17 01:19:13 executor_base.py:111] # cuda blocks: 33130, # CPU blocks: 7281
+2025-08-17 01:19:13,677 - __main__ - INFO - INFO 08-17 01:19:13 executor_base.py:116] Maximum concurrency for 16384 tokens per request: 32.35x
+2025-08-17 01:19:14,313 - __main__ - WARNING - Attempt 91: Please wait for vllm server to become ready...
+2025-08-17 01:19:15,360 - __main__ - WARNING - Attempt 92: Please wait for vllm server to become ready...
+2025-08-17 01:19:16,490 - __main__ - WARNING - Attempt 93: Please wait for vllm server to become ready...
+2025-08-17 01:19:16,918 - __main__ - INFO - INFO 08-17 01:19:16 model_runner.py:1434] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI. If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+2025-08-17 01:19:17,587 - __main__ - WARNING - Attempt 94: Please wait for vllm server to become ready...
+2025-08-17 01:19:18,657 - __main__ - WARNING - Attempt 95: Please wait for vllm server to become ready...
+2025-08-17 01:19:19,714 - __main__ - WARNING - Attempt 96: Please wait for vllm server to become ready...
+2025-08-17 01:19:20,767 - __main__ - WARNING - Attempt 97: Please wait for vllm server to become ready...
+2025-08-17 01:19:21,850 - __main__ - WARNING - Attempt 98: Please wait for vllm server to become ready...
+2025-08-17 01:19:22,916 - __main__ - WARNING - Attempt 99: Please wait for vllm server to become ready...
+2025-08-17 01:19:23,970 - __main__ - WARNING - Attempt 100: Please wait for vllm server to become ready...
+2025-08-17 01:19:25,021 - __main__ - WARNING - Attempt 101: Please wait for vllm server to become ready...
+2025-08-17 01:19:26,097 - __main__ - WARNING - Attempt 102: Please wait for vllm server to become ready...
+2025-08-17 01:19:27,211 - __main__ - WARNING - Attempt 103: Please wait for vllm server to become ready...
+2025-08-17 01:19:28,340 - __main__ - WARNING - Attempt 104: Please wait for vllm server to become ready...
+2025-08-17 01:19:29,464 - __main__ - WARNING - Attempt 105: Please wait for vllm server to become ready...
+2025-08-17 01:19:30,586 - __main__ - WARNING - Attempt 106: Please wait for vllm server to become ready...
+Capturing CUDA graph shapes: 100%|██████████| 35/35 [00:13<00:00,  2.51it/s]
+2025-08-17 01:19:30,891 - __main__ - INFO - INFO 08-17 01:19:30 model_runner.py:1562] Graph capturing finished in 14 secs, took 2.41 GiB
+2025-08-17 01:19:30,891 - __main__ - INFO - INFO 08-17 01:19:30 llm_engine.py:436] init engine (profile, create kv cache, warmup model) took 27.57 seconds
+2025-08-17 01:19:31,708 - __main__ - WARNING - Attempt 107: Please wait for vllm server to become ready...
+2025-08-17 01:19:31,800 - __main__ - INFO - INFO 08-17 01:19:31 api_server.py:958] Starting vLLM API server on http://0.0.0.0:40079
+2025-08-17 01:19:31,800 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:23] Available routes are:
+2025-08-17 01:19:31,800 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /openapi.json, Methods: HEAD, GET
+2025-08-17 01:19:31,800 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /docs, Methods: HEAD, GET
+2025-08-17 01:19:31,800 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /docs/oauth2-redirect, Methods: HEAD, GET
+2025-08-17 01:19:31,800 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /redoc, Methods: HEAD, GET
+2025-08-17 01:19:31,800 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /health, Methods: GET
+2025-08-17 01:19:31,800 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /ping, Methods: GET, POST
+2025-08-17 01:19:31,800 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /tokenize, Methods: POST
+2025-08-17 01:19:31,800 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /detokenize, Methods: POST
+2025-08-17 01:19:31,801 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /v1/models, Methods: GET
+2025-08-17 01:19:31,801 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /version, Methods: GET
+2025-08-17 01:19:31,801 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /v1/chat/completions, Methods: POST
+2025-08-17 01:19:31,801 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /v1/completions, Methods: POST
+2025-08-17 01:19:31,801 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /v1/embeddings, Methods: POST
+2025-08-17 01:19:31,801 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /pooling, Methods: POST
+2025-08-17 01:19:31,801 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /score, Methods: POST
+2025-08-17 01:19:31,801 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /v1/score, Methods: POST
+2025-08-17 01:19:31,801 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /v1/audio/transcriptions, Methods: POST
+2025-08-17 01:19:31,801 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /rerank, Methods: POST
+2025-08-17 01:19:31,801 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /v1/rerank, Methods: POST
+2025-08-17 01:19:31,801 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /v2/rerank, Methods: POST
+2025-08-17 01:19:31,801 - __main__ - INFO - INFO 08-17 01:19:31 launcher.py:31] Route: /invocations, Methods: POST
+2025-08-17 01:19:31,834 - __main__ - INFO - INFO:     Started server process [20658]
+2025-08-17 01:19:31,834 - __main__ - INFO - INFO:     Waiting for application startup.
+2025-08-17 01:19:31,988 - __main__ - INFO - INFO:     Application startup complete.
+2025-08-17 01:19:32,853 - __main__ - INFO - INFO:     127.0.0.1:46170 - "GET /v1/models HTTP/1.1" 200 OK
+2025-08-17 01:19:32,855 - __main__ - INFO - vllm server is ready.
+2025-08-17 01:19:32,856 - __main__ - INFO - Queue remaining: 1
+2025-08-17 01:19:32,856 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:19:32,856 - __main__ - INFO - 
+Worker ID
+---------
+2025-08-17 01:19:32,857 - __main__ - INFO - Worker 0 processing work item 1ddf2acc8972fb3eef6008a0993e9d16f781a99f
+2025-08-17 01:19:32,857 - __main__ - INFO - Created all tasks for 1ddf2acc8972fb3eef6008a0993e9d16f781a99f
+2025-08-17 01:19:32,857 - __main__ - INFO - Start process_pdf for /test_pdf_dir/333.pdf
+2025-08-17 01:19:32,862 - __main__ - INFO - Got 1 pages to do for /test_pdf_dir/333.pdf in worker 0
+2025-08-17 01:19:34,274 - __main__ - INFO - INFO 08-17 01:19:34 chat_utils.py:332] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+2025-08-17 01:19:34,329 - __main__ - INFO - INFO 08-17 01:19:34 logger.py:39] Received request chatcmpl-b80147a414264387a1898cd873472aaa: prompt: '<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n<|im_start|>user\n<|vision_start|><|image_pad|><|vision_end|>\nBelow is the image of one page of a document. Just return the plain text representation of this document as if you were reading it naturally.\nALL tables should be presented in HTML format.\nIf there are images or figures in the page, present them as "<Image>(left,top),(right,bottom)</Image>", (left,top,right,bottom) are the coordinates of the top-left and bottom-right corners of the image or figure.\nPresent all titles and headings as H1 headings.\nDo not hallucinate.\n<|im_end|>\n<|im_start|>assistant\n', params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.0, top_p=1.0, top_k=-1, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=False, max_tokens=16260, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None), prompt_token_ids: None, lora_request: None, prompt_adapter_request: None.
+2025-08-17 01:19:35,941 - __main__ - INFO - INFO 08-17 01:19:35 engine.py:280] Added request chatcmpl-b80147a414264387a1898cd873472aaa.
+2025-08-17 01:19:36,685 - __main__ - INFO - INFO 08-17 01:19:36 metrics.py:455] Avg prompt throughput: 215.0 tokens/s, Avg generation throughput: 0.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.2%, CPU KV cache usage: 0.0%.
+2025-08-17 01:19:36,685 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:19:41,695 - __main__ - INFO - INFO 08-17 01:19:41 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 67.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.3%, CPU KV cache usage: 0.0%.
+2025-08-17 01:19:41,695 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:19:42,858 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:19:42,858 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:19:42,858 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:19:46,709 - __main__ - INFO - INFO 08-17 01:19:46 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 67.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.3%, CPU KV cache usage: 0.0%.
+2025-08-17 01:19:46,710 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:19:51,716 - __main__ - INFO - INFO 08-17 01:19:51 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 67.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.4%, CPU KV cache usage: 0.0%.
+2025-08-17 01:19:51,717 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:19:52,859 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:19:52,859 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:19:52,860 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:19:56,726 - __main__ - INFO - INFO 08-17 01:19:56 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 67.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.5%, CPU KV cache usage: 0.0%.
+2025-08-17 01:19:56,727 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:20:01,740 - __main__ - INFO - INFO 08-17 01:20:01 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 67.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.5%, CPU KV cache usage: 0.0%.
+2025-08-17 01:20:01,740 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:20:02,861 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:20:02,861 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:20:02,862 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:20:06,740 - __main__ - INFO - INFO 08-17 01:20:06 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.6%, CPU KV cache usage: 0.0%.
+2025-08-17 01:20:06,741 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:20:11,741 - __main__ - INFO - INFO 08-17 01:20:11 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.6%, CPU KV cache usage: 0.0%.
+2025-08-17 01:20:11,741 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:20:12,864 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:20:12,864 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:20:12,864 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:20:16,745 - __main__ - INFO - INFO 08-17 01:20:16 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.5 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+2025-08-17 01:20:16,745 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:20:21,753 - __main__ - INFO - INFO 08-17 01:20:21 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 65.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.0%.
+2025-08-17 01:20:21,753 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:20:22,866 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:20:22,866 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:20:22,867 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:20:26,765 - __main__ - INFO - INFO 08-17 01:20:26 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.0%.
+2025-08-17 01:20:26,765 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:20:31,765 - __main__ - INFO - INFO 08-17 01:20:31 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.9%, CPU KV cache usage: 0.0%.
+2025-08-17 01:20:31,766 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:20:32,868 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:20:32,868 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:20:32,869 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:20:36,771 - __main__ - INFO - INFO 08-17 01:20:36 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.0%, CPU KV cache usage: 0.0%.
+2025-08-17 01:20:36,771 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:20:41,785 - __main__ - INFO - INFO 08-17 01:20:41 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.0%, CPU KV cache usage: 0.0%.
+2025-08-17 01:20:41,785 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:20:42,870 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:20:42,870 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:20:42,871 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:20:46,799 - __main__ - INFO - INFO 08-17 01:20:46 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.1%, CPU KV cache usage: 0.0%.
+2025-08-17 01:20:46,799 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:20:51,800 - __main__ - INFO - INFO 08-17 01:20:51 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 65.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.2%, CPU KV cache usage: 0.0%.
+2025-08-17 01:20:51,800 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:20:52,873 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:20:52,873 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:20:52,873 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:20:56,809 - __main__ - INFO - INFO 08-17 01:20:56 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 65.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.2%, CPU KV cache usage: 0.0%.
+2025-08-17 01:20:56,810 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:21:01,819 - __main__ - INFO - INFO 08-17 01:21:01 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 65.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.3%, CPU KV cache usage: 0.0%.
+2025-08-17 01:21:01,820 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:21:02,874 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:21:02,875 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:21:02,875 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:21:06,822 - __main__ - INFO - INFO 08-17 01:21:06 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 65.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.3%, CPU KV cache usage: 0.0%.
+2025-08-17 01:21:06,823 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:21:11,829 - __main__ - INFO - INFO 08-17 01:21:11 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 65.5 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.4%, CPU KV cache usage: 0.0%.
+2025-08-17 01:21:11,830 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:21:12,876 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:21:12,877 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:21:12,877 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:21:16,839 - __main__ - INFO - INFO 08-17 01:21:16 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 65.5 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.5%, CPU KV cache usage: 0.0%.
+2025-08-17 01:21:16,840 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:21:21,854 - __main__ - INFO - INFO 08-17 01:21:21 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 64.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.5%, CPU KV cache usage: 0.0%.
+2025-08-17 01:21:21,854 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:21:22,878 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:21:22,878 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:21:22,878 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:21:26,858 - __main__ - INFO - INFO 08-17 01:21:26 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 50.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.6%, CPU KV cache usage: 0.0%.
+2025-08-17 01:21:26,858 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:21:31,876 - __main__ - INFO - INFO 08-17 01:21:31 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 40.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.6%, CPU KV cache usage: 0.0%.
+2025-08-17 01:21:31,877 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:21:32,881 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:21:32,881 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:21:32,882 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:21:36,888 - __main__ - INFO - INFO 08-17 01:21:36 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.6%, CPU KV cache usage: 0.0%.
+2025-08-17 01:21:36,889 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:21:41,889 - __main__ - INFO - INFO 08-17 01:21:41 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 45.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.7%, CPU KV cache usage: 0.0%.
+2025-08-17 01:21:41,889 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:21:42,883 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:21:42,883 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:21:42,883 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:21:46,907 - __main__ - INFO - INFO 08-17 01:21:46 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.7%, CPU KV cache usage: 0.0%.
+2025-08-17 01:21:46,907 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:21:51,910 - __main__ - INFO - INFO 08-17 01:21:51 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 43.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.8%, CPU KV cache usage: 0.0%.
+2025-08-17 01:21:51,910 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:21:52,885 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:21:52,885 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:21:52,885 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:21:56,923 - __main__ - INFO - INFO 08-17 01:21:56 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 43.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.8%, CPU KV cache usage: 0.0%.
+2025-08-17 01:21:56,924 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:22:01,940 - __main__ - INFO - INFO 08-17 01:22:01 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.9%, CPU KV cache usage: 0.0%.
+2025-08-17 01:22:01,941 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:22:02,886 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:22:02,886 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:22:02,887 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:22:06,952 - __main__ - INFO - INFO 08-17 01:22:06 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.5 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.9%, CPU KV cache usage: 0.0%.
+2025-08-17 01:22:06,952 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:22:11,957 - __main__ - INFO - INFO 08-17 01:22:11 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.9%, CPU KV cache usage: 0.0%.
+2025-08-17 01:22:11,957 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:22:12,888 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:22:12,889 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:22:12,889 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:22:16,960 - __main__ - INFO - INFO 08-17 01:22:16 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.0%, CPU KV cache usage: 0.0%.
+2025-08-17 01:22:16,961 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:22:21,961 - __main__ - INFO - INFO 08-17 01:22:21 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.0%, CPU KV cache usage: 0.0%.
+2025-08-17 01:22:21,961 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:22:22,890 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:22:22,891 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:22:22,891 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:22:26,966 - __main__ - INFO - INFO 08-17 01:22:26 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.1%, CPU KV cache usage: 0.0%.
+2025-08-17 01:22:26,966 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:22:31,980 - __main__ - INFO - INFO 08-17 01:22:31 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.1%, CPU KV cache usage: 0.0%.
+2025-08-17 01:22:31,980 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:22:32,892 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:22:32,892 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:22:32,892 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:22:36,993 - __main__ - INFO - INFO 08-17 01:22:36 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.1%, CPU KV cache usage: 0.0%.
+2025-08-17 01:22:36,993 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:22:42,010 - __main__ - INFO - INFO 08-17 01:22:42 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.2%, CPU KV cache usage: 0.0%.
+2025-08-17 01:22:42,011 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:22:42,894 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:22:42,894 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:22:42,895 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:22:47,031 - __main__ - INFO - INFO 08-17 01:22:47 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.2%, CPU KV cache usage: 0.0%.
+2025-08-17 01:22:47,032 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:22:52,049 - __main__ - INFO - INFO 08-17 01:22:52 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 43.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.3%, CPU KV cache usage: 0.0%.
+2025-08-17 01:22:52,050 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:22:52,896 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:22:52,897 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:22:52,897 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:22:57,060 - __main__ - INFO - INFO 08-17 01:22:57 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 45.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.3%, CPU KV cache usage: 0.0%.
+2025-08-17 01:22:57,060 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:23:02,078 - __main__ - INFO - INFO 08-17 01:23:02 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.3%, CPU KV cache usage: 0.0%.
+2025-08-17 01:23:02,078 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:23:02,899 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:23:02,899 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:23:02,900 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:23:07,094 - __main__ - INFO - INFO 08-17 01:23:07 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.4%, CPU KV cache usage: 0.0%.
+2025-08-17 01:23:07,094 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:23:12,115 - __main__ - INFO - INFO 08-17 01:23:12 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.4%, CPU KV cache usage: 0.0%.
+2025-08-17 01:23:12,116 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:23:12,902 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:23:12,902 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:23:12,903 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:23:17,123 - __main__ - INFO - INFO 08-17 01:23:17 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 40.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.5%, CPU KV cache usage: 0.0%.
+2025-08-17 01:23:17,123 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:23:22,124 - __main__ - INFO - INFO 08-17 01:23:22 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 43.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.5%, CPU KV cache usage: 0.0%.
+2025-08-17 01:23:22,125 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:23:22,904 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:23:22,905 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:23:22,905 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:23:27,142 - __main__ - INFO - INFO 08-17 01:23:27 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.5%, CPU KV cache usage: 0.0%.
+2025-08-17 01:23:27,142 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:23:32,150 - __main__ - INFO - INFO 08-17 01:23:32 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 40.5 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.6%, CPU KV cache usage: 0.0%.
+2025-08-17 01:23:32,150 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:23:32,906 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:23:32,907 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:23:32,907 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:23:37,154 - __main__ - INFO - INFO 08-17 01:23:37 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 40.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.6%, CPU KV cache usage: 0.0%.
+2025-08-17 01:23:37,154 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:23:42,175 - __main__ - INFO - INFO 08-17 01:23:42 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 43.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.7%, CPU KV cache usage: 0.0%.
+2025-08-17 01:23:42,175 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:23:42,908 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:23:42,909 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:23:42,909 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:23:47,184 - __main__ - INFO - INFO 08-17 01:23:47 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 40.5 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.7%, CPU KV cache usage: 0.0%.
+2025-08-17 01:23:47,185 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:23:52,194 - __main__ - INFO - INFO 08-17 01:23:52 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.7%, CPU KV cache usage: 0.0%.
+2025-08-17 01:23:52,195 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:23:52,911 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:23:52,911 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:23:52,912 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:23:57,206 - __main__ - INFO - INFO 08-17 01:23:57 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 43.5 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.8%, CPU KV cache usage: 0.0%.
+2025-08-17 01:23:57,207 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:24:02,221 - __main__ - INFO - INFO 08-17 01:24:02 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.8%, CPU KV cache usage: 0.0%.
+2025-08-17 01:24:02,221 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:24:02,913 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:24:02,914 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:24:02,914 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:24:07,230 - __main__ - INFO - INFO 08-17 01:24:07 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 43.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.9%, CPU KV cache usage: 0.0%.
+2025-08-17 01:24:07,231 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:24:12,269 - __main__ - INFO - INFO 08-17 01:24:12 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.9%, CPU KV cache usage: 0.0%.
+2025-08-17 01:24:12,269 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:24:12,915 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:24:12,915 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:24:12,915 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:24:17,269 - __main__ - INFO - INFO 08-17 01:24:17 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.9%, CPU KV cache usage: 0.0%.
+2025-08-17 01:24:17,269 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:24:22,281 - __main__ - INFO - INFO 08-17 01:24:22 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 43.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.0%, CPU KV cache usage: 0.0%.
+2025-08-17 01:24:22,281 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:24:22,916 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:24:22,917 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:24:22,917 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:24:27,302 - __main__ - INFO - INFO 08-17 01:24:27 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.0%, CPU KV cache usage: 0.0%.
+2025-08-17 01:24:27,302 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:24:32,309 - __main__ - INFO - INFO 08-17 01:24:32 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 45.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.1%, CPU KV cache usage: 0.0%.
+2025-08-17 01:24:32,309 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:24:32,918 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:24:32,918 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+2025-08-17 01:24:32,919 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:24:35,871 - __main__ - INFO - INFO:     127.0.0.1:46298 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2025-08-17 01:24:35,873 - __main__ - WARNING - JSON decode error on attempt 0 for 0: Unterminated string starting at: line 1 column 136 (char 135)
+2025-08-17 01:24:37,242 - __main__ - INFO - INFO 08-17 01:24:37 logger.py:39] Received request chatcmpl-f9038e275eb741678b2845588891fb6f: prompt: '<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n<|im_start|>user\n<|vision_start|><|image_pad|><|vision_end|>\nBelow is the image of one page of a document. Just return the plain text representation of this document as if you were reading it naturally.\nALL tables should be presented in HTML format.\nIf there are images or figures in the page, present them as "<Image>(left,top),(right,bottom)</Image>", (left,top,right,bottom) are the coordinates of the top-left and bottom-right corners of the image or figure.\nPresent all titles and headings as H1 headings.\nDo not hallucinate.\n<|im_end|>\n<|im_start|>assistant\n', params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.1, top_p=1.0, top_k=-1, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=False, max_tokens=16260, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None), prompt_token_ids: None, lora_request: None, prompt_adapter_request: None.
+2025-08-17 01:24:37,364 - __main__ - INFO - INFO 08-17 01:24:37 engine.py:280] Added request chatcmpl-f9038e275eb741678b2845588891fb6f.
+2025-08-17 01:24:37,611 - __main__ - INFO - INFO 08-17 01:24:37 metrics.py:455] Avg prompt throughput: 204.6 tokens/s, Avg generation throughput: 27.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.2%, CPU KV cache usage: 0.0%.
+2025-08-17 01:24:37,611 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:24:42,622 - __main__ - INFO - INFO 08-17 01:24:42 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.3%, CPU KV cache usage: 0.0%.
+2025-08-17 01:24:42,622 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:24:42,920 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:24:42,920 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         2.53                      3.62
+vllm_output_tokens                       35.63                     51.00
+2025-08-17 01:24:42,920 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:24:47,636 - __main__ - INFO - INFO 08-17 01:24:47 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.3%, CPU KV cache usage: 0.0%.
+2025-08-17 01:24:47,636 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:24:52,643 - __main__ - INFO - INFO 08-17 01:24:52 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.4%, CPU KV cache usage: 0.0%.
+2025-08-17 01:24:52,643 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:24:52,922 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:24:52,922 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         2.47                      3.62
+vllm_output_tokens                       34.82                     51.00
+2025-08-17 01:24:52,922 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:24:57,645 - __main__ - INFO - INFO 08-17 01:24:57 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.5%, CPU KV cache usage: 0.0%.
+2025-08-17 01:24:57,645 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:25:02,645 - __main__ - INFO - INFO 08-17 01:25:02 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 67.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.5%, CPU KV cache usage: 0.0%.
+2025-08-17 01:25:02,646 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:25:02,923 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:25:02,924 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         2.41                      3.62
+vllm_output_tokens                       34.05                     51.00
+2025-08-17 01:25:02,924 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:25:07,646 - __main__ - INFO - INFO 08-17 01:25:07 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.6%, CPU KV cache usage: 0.0%.
+2025-08-17 01:25:07,646 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:25:12,660 - __main__ - INFO - INFO 08-17 01:25:12 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.6%, CPU KV cache usage: 0.0%.
+2025-08-17 01:25:12,661 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:25:12,926 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:25:12,926 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         2.36                      3.62
+vllm_output_tokens                       33.31                     51.00
+2025-08-17 01:25:12,926 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:25:17,668 - __main__ - INFO - INFO 08-17 01:25:17 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+2025-08-17 01:25:17,668 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:25:22,682 - __main__ - INFO - INFO 08-17 01:25:22 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.0%.
+2025-08-17 01:25:22,683 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:25:22,927 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:25:22,927 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         2.31                      3.62
+vllm_output_tokens                       32.60                     51.00
+2025-08-17 01:25:22,928 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:25:27,690 - __main__ - INFO - INFO 08-17 01:25:27 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.0%.
+2025-08-17 01:25:27,690 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:25:32,693 - __main__ - INFO - INFO 08-17 01:25:32 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.9%, CPU KV cache usage: 0.0%.
+2025-08-17 01:25:32,693 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:25:32,929 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:25:32,929 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         2.26                      3.62
+vllm_output_tokens                       31.92                     51.00
+2025-08-17 01:25:32,929 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:25:37,699 - __main__ - INFO - INFO 08-17 01:25:37 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 65.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.0%, CPU KV cache usage: 0.0%.
+2025-08-17 01:25:37,700 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:25:42,713 - __main__ - INFO - INFO 08-17 01:25:42 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 66.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.0%, CPU KV cache usage: 0.0%.
+2025-08-17 01:25:42,713 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:25:42,931 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:25:42,931 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         2.22                      3.62
+vllm_output_tokens                       31.26                     51.00
+2025-08-17 01:25:42,932 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:25:47,714 - __main__ - INFO - INFO 08-17 01:25:47 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 65.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.1%, CPU KV cache usage: 0.0%.
+2025-08-17 01:25:47,714 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:25:52,716 - __main__ - INFO - INFO 08-17 01:25:52 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 65.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.1%, CPU KV cache usage: 0.0%.
+2025-08-17 01:25:52,717 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:25:52,933 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:25:52,933 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         2.17                      3.62
+vllm_output_tokens                       30.64                     51.00
+2025-08-17 01:25:52,934 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:25:57,731 - __main__ - INFO - INFO 08-17 01:25:57 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 65.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.2%, CPU KV cache usage: 0.0%.
+2025-08-17 01:25:57,732 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:26:02,730 - __main__ - INFO - INFO 08-17 01:26:02 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 65.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.3%, CPU KV cache usage: 0.0%.
+2025-08-17 01:26:02,730 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:26:02,939 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:26:02,939 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         2.13                      3.62
+vllm_output_tokens                       30.04                     51.00
+2025-08-17 01:26:02,940 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:26:07,732 - __main__ - INFO - INFO 08-17 01:26:07 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 65.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.3%, CPU KV cache usage: 0.0%.
+2025-08-17 01:26:07,732 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:26:12,742 - __main__ - INFO - INFO 08-17 01:26:12 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 65.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.4%, CPU KV cache usage: 0.0%.
+2025-08-17 01:26:12,743 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:26:12,941 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:26:12,941 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         2.09                      3.62
+vllm_output_tokens                       29.46                     51.00
+2025-08-17 01:26:12,942 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:26:17,751 - __main__ - INFO - INFO 08-17 01:26:17 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 64.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.5%, CPU KV cache usage: 0.0%.
+2025-08-17 01:26:17,751 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:26:22,759 - __main__ - INFO - INFO 08-17 01:26:22 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 64.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.5%, CPU KV cache usage: 0.0%.
+2025-08-17 01:26:22,760 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:26:22,943 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:26:22,943 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         2.05                      3.62
+vllm_output_tokens                       28.90                     51.00
+2025-08-17 01:26:22,944 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:26:27,767 - __main__ - INFO - INFO 08-17 01:26:27 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 54.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.6%, CPU KV cache usage: 0.0%.
+2025-08-17 01:26:27,767 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:26:32,780 - __main__ - INFO - INFO 08-17 01:26:32 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.6%, CPU KV cache usage: 0.0%.
+2025-08-17 01:26:32,780 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:26:32,944 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:26:32,945 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         2.01                      3.62
+vllm_output_tokens                       28.36                     51.00
+2025-08-17 01:26:32,945 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:26:37,801 - __main__ - INFO - INFO 08-17 01:26:37 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 40.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.6%, CPU KV cache usage: 0.0%.
+2025-08-17 01:26:37,801 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:26:42,821 - __main__ - INFO - INFO 08-17 01:26:42 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.7%, CPU KV cache usage: 0.0%.
+2025-08-17 01:26:42,822 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:26:42,946 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:26:42,947 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.97                      3.62
+vllm_output_tokens                       27.85                     51.00
+2025-08-17 01:26:42,947 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:26:47,839 - __main__ - INFO - INFO 08-17 01:26:47 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 43.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.7%, CPU KV cache usage: 0.0%.
+2025-08-17 01:26:47,839 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:26:52,843 - __main__ - INFO - INFO 08-17 01:26:52 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.8%, CPU KV cache usage: 0.0%.
+2025-08-17 01:26:52,843 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:26:52,948 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:26:52,949 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.94                      3.62
+vllm_output_tokens                       27.35                     51.00
+2025-08-17 01:26:52,949 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:26:57,863 - __main__ - INFO - INFO 08-17 01:26:57 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.8%, CPU KV cache usage: 0.0%.
+2025-08-17 01:26:57,863 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:27:02,883 - __main__ - INFO - INFO 08-17 01:27:02 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 40.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.8%, CPU KV cache usage: 0.0%.
+2025-08-17 01:27:02,883 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:27:02,950 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:27:02,950 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.91                      3.62
+vllm_output_tokens                       26.87                     51.00
+2025-08-17 01:27:02,950 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:27:07,902 - __main__ - INFO - INFO 08-17 01:27:07 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 40.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.9%, CPU KV cache usage: 0.0%.
+2025-08-17 01:27:07,902 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:27:12,908 - __main__ - INFO - INFO 08-17 01:27:12 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.9%, CPU KV cache usage: 0.0%.
+2025-08-17 01:27:12,909 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:27:12,951 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:27:12,951 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.87                      3.62
+vllm_output_tokens                       26.41                     51.00
+2025-08-17 01:27:12,951 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:27:17,925 - __main__ - INFO - INFO 08-17 01:27:17 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.0%, CPU KV cache usage: 0.0%.
+2025-08-17 01:27:17,925 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:27:22,927 - __main__ - INFO - INFO 08-17 01:27:22 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.0%, CPU KV cache usage: 0.0%.
+2025-08-17 01:27:22,928 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:27:22,952 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:27:22,952 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.84                      3.62
+vllm_output_tokens                       25.96                     51.00
+2025-08-17 01:27:22,953 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:27:27,944 - __main__ - INFO - INFO 08-17 01:27:27 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.0%, CPU KV cache usage: 0.0%.
+2025-08-17 01:27:27,944 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:27:32,953 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:27:32,953 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.81                      3.62
+vllm_output_tokens                       25.52                     51.00
+2025-08-17 01:27:32,954 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:27:32,954 - __main__ - INFO - INFO 08-17 01:27:32 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.1%, CPU KV cache usage: 0.0%.
+2025-08-17 01:27:32,954 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:27:37,973 - __main__ - INFO - INFO 08-17 01:27:37 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.1%, CPU KV cache usage: 0.0%.
+2025-08-17 01:27:37,973 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:27:42,956 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:27:42,957 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.78                      3.62
+vllm_output_tokens                       25.11                     51.00
+2025-08-17 01:27:42,957 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:27:42,985 - __main__ - INFO - INFO 08-17 01:27:42 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.2%, CPU KV cache usage: 0.0%.
+2025-08-17 01:27:42,985 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:27:48,004 - __main__ - INFO - INFO 08-17 01:27:48 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.2%, CPU KV cache usage: 0.0%.
+2025-08-17 01:27:48,005 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:27:52,959 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:27:52,959 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.75                      3.62
+vllm_output_tokens                       24.70                     51.00
+2025-08-17 01:27:52,960 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:27:53,009 - __main__ - INFO - INFO 08-17 01:27:53 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 45.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.3%, CPU KV cache usage: 0.0%.
+2025-08-17 01:27:53,009 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:27:58,022 - __main__ - INFO - INFO 08-17 01:27:58 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 43.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.3%, CPU KV cache usage: 0.0%.
+2025-08-17 01:27:58,022 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:28:02,961 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:28:02,962 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.72                      3.62
+vllm_output_tokens                       24.31                     51.00
+2025-08-17 01:28:02,962 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:28:03,044 - __main__ - INFO - INFO 08-17 01:28:03 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.3%, CPU KV cache usage: 0.0%.
+2025-08-17 01:28:03,044 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:28:08,049 - __main__ - INFO - INFO 08-17 01:28:08 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 40.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.4%, CPU KV cache usage: 0.0%.
+2025-08-17 01:28:08,050 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:28:12,964 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:28:12,964 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.70                      3.62
+vllm_output_tokens                       23.93                     51.00
+2025-08-17 01:28:12,965 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:28:13,069 - __main__ - INFO - INFO 08-17 01:28:13 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 43.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.4%, CPU KV cache usage: 0.0%.
+2025-08-17 01:28:13,069 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:28:18,070 - __main__ - INFO - INFO 08-17 01:28:18 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 44.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.5%, CPU KV cache usage: 0.0%.
+2025-08-17 01:28:18,070 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:28:22,967 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:28:22,967 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.67                      3.62
+vllm_output_tokens                       23.56                     51.00
+2025-08-17 01:28:22,968 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:28:23,074 - __main__ - INFO - INFO 08-17 01:28:23 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.5%, CPU KV cache usage: 0.0%.
+2025-08-17 01:28:23,074 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:28:28,084 - __main__ - INFO - INFO 08-17 01:28:28 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.5%, CPU KV cache usage: 0.0%.
+2025-08-17 01:28:28,085 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:28:32,970 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:28:32,970 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.65                      3.62
+vllm_output_tokens                       23.20                     51.00
+2025-08-17 01:28:32,970 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:28:33,089 - __main__ - INFO - INFO 08-17 01:28:33 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.6%, CPU KV cache usage: 0.0%.
+2025-08-17 01:28:33,089 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:28:38,113 - __main__ - INFO - INFO 08-17 01:28:38 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.6%, CPU KV cache usage: 0.0%.
+2025-08-17 01:28:38,113 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:28:42,972 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:28:42,972 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.62                      3.62
+vllm_output_tokens                       22.86                     51.00
+2025-08-17 01:28:42,973 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:28:43,157 - __main__ - INFO - INFO 08-17 01:28:43 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 40.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.7%, CPU KV cache usage: 0.0%.
+2025-08-17 01:28:43,157 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:28:48,168 - __main__ - INFO - INFO 08-17 01:28:48 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.5 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.7%, CPU KV cache usage: 0.0%.
+2025-08-17 01:28:48,168 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:28:52,975 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:28:52,975 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.60                      3.62
+vllm_output_tokens                       22.52                     51.00
+2025-08-17 01:28:52,975 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:28:53,173 - __main__ - INFO - INFO 08-17 01:28:53 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.7%, CPU KV cache usage: 0.0%.
+2025-08-17 01:28:53,173 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:28:58,192 - __main__ - INFO - INFO 08-17 01:28:58 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.8%, CPU KV cache usage: 0.0%.
+2025-08-17 01:28:58,192 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:29:02,978 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:29:02,978 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.57                      3.62
+vllm_output_tokens                       22.19                     51.00
+2025-08-17 01:29:02,979 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:29:03,193 - __main__ - INFO - INFO 08-17 01:29:03 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 45.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.8%, CPU KV cache usage: 0.0%.
+2025-08-17 01:29:03,193 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:29:08,203 - __main__ - INFO - INFO 08-17 01:29:08 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 40.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.9%, CPU KV cache usage: 0.0%.
+2025-08-17 01:29:08,204 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:29:12,980 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:29:12,981 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.55                      3.62
+vllm_output_tokens                       21.87                     51.00
+2025-08-17 01:29:12,981 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:29:13,216 - __main__ - INFO - INFO 08-17 01:29:13 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 41.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.9%, CPU KV cache usage: 0.0%.
+2025-08-17 01:29:13,217 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:29:18,224 - __main__ - INFO - INFO 08-17 01:29:18 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 38.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.9%, CPU KV cache usage: 0.0%.
+2025-08-17 01:29:18,224 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:29:22,983 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:29:22,983 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.53                      3.62
+vllm_output_tokens                       21.57                     51.00
+2025-08-17 01:29:22,984 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:29:23,232 - __main__ - INFO - INFO 08-17 01:29:23 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 38.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.0%, CPU KV cache usage: 0.0%.
+2025-08-17 01:29:23,232 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:29:28,234 - __main__ - INFO - INFO 08-17 01:29:28 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 42.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.0%, CPU KV cache usage: 0.0%.
+2025-08-17 01:29:28,234 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:29:32,985 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:29:32,985 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         1.51                      3.62
+vllm_output_tokens                       21.27                     51.00
+2025-08-17 01:29:32,985 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:29:33,235 - __main__ - INFO - INFO 08-17 01:29:33 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 43.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.0%, CPU KV cache usage: 0.0%.
+2025-08-17 01:29:33,235 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:29:38,246 - __main__ - INFO - INFO 08-17 01:29:38 metrics.py:455] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 39.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.1%, CPU KV cache usage: 0.0%.
+2025-08-17 01:29:38,247 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:29:39,085 - __main__ - INFO - INFO:     127.0.0.1:46606 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2025-08-17 01:29:39,087 - __main__ - WARNING - JSON decode error on attempt 1 for 0: Unterminated string starting at: line 1 column 136 (char 135)
+2025-08-17 01:29:40,475 - __main__ - INFO - INFO 08-17 01:29:40 logger.py:39] Received request chatcmpl-7000bf7f676a4ac8aee0dc8af19c78f5: prompt: '<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n<|im_start|>user\n<|vision_start|><|image_pad|><|vision_end|>\nBelow is the image of one page of a document. Just return the plain text representation of this document as if you were reading it naturally.\nALL tables should be presented in HTML format.\nIf there are images or figures in the page, present them as "<Image>(left,top),(right,bottom)</Image>", (left,top,right,bottom) are the coordinates of the top-left and bottom-right corners of the image or figure.\nPresent all titles and headings as H1 headings.\nDo not hallucinate.\n<|im_end|>\n<|im_start|>assistant\n', params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.2, top_p=1.0, top_k=-1, min_p=0.0, seed=None, stop=[], stop_token_ids=[], bad_words=[], include_stop_str_in_output=False, ignore_eos=False, max_tokens=16260, min_tokens=0, logprobs=None, prompt_logprobs=None, skip_special_tokens=True, spaces_between_special_tokens=True, truncate_prompt_tokens=None, guided_decoding=None), prompt_token_ids: None, lora_request: None, prompt_adapter_request: None.
+2025-08-17 01:29:40,546 - __main__ - INFO - INFO 08-17 01:29:40 engine.py:280] Added request chatcmpl-7000bf7f676a4ac8aee0dc8af19c78f5.
+2025-08-17 01:29:42,987 - __main__ - INFO - Queue remaining: 0
+2025-08-17 01:29:42,987 - __main__ - INFO - 
+Metric Name                        Lifetime (tokens/sec)     Recently (tokens/sec)
+----------------------------------------------------------------------------------
+vllm_input_tokens                         2.97                      3.62
+vllm_output_tokens                       41.95                     51.00
+2025-08-17 01:29:42,987 - __main__ - INFO - 
+Worker ID | started
+----------+--------
+0         | 1      
+2025-08-17 01:29:43,256 - __main__ - INFO - INFO 08-17 01:29:43 metrics.py:455] Avg prompt throughput: 216.6 tokens/s, Avg generation throughput: 40.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.2%, CPU KV cache usage: 0.0%.
+2025-08-17 01:29:43,256 - __main__ - INFO - vllm running req: 1 queue req: 0
+2025-08-17 01:29:44,733 - __main__ - INFO - INFO:     127.0.0.1:46954 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+2025-08-17 01:29:44,742 - __main__ - INFO - Finished TaskGroup for worker on 1ddf2acc8972fb3eef6008a0993e9d16f781a99f
+2025-08-17 01:29:44,742 - __main__ - INFO - Got 1 docs for 1ddf2acc8972fb3eef6008a0993e9d16f781a99f
+2025-08-17 01:29:44,743 - __main__ - INFO - Worker 1 exiting due to empty queue
+2025-08-17 01:29:44,744 - __main__ - INFO - Worker 2 exiting due to empty queue
+2025-08-17 01:29:44,744 - __main__ - INFO - Worker 3 exiting due to empty queue
+2025-08-17 01:29:44,744 - __main__ - INFO - Worker 4 exiting due to empty queue
+2025-08-17 01:29:44,744 - __main__ - INFO - Worker 5 exiting due to empty queue
+2025-08-17 01:29:44,744 - __main__ - INFO - Worker 6 exiting due to empty queue
+2025-08-17 01:29:44,744 - __main__ - INFO - Worker 7 exiting due to empty queue
+2025-08-17 01:29:44,745 - __main__ - INFO - Worker 0 exiting due to empty queue
+2025-08-17 01:29:44,745 - __main__ - INFO - Work done
+2025-08-17 01:29:44,745 - __main__ - INFO - Got cancellation request for VLLM server
+root@b9faee63f343:/OCRFlux# ls
+Dockerfile  LICENSE  OCRFlux-debug.log  README.md  build  eval  images  ocrflux  ocrflux.egg-info  pyproject.toml  workspace3
+root@b9faee63f343:/OCRFlux# 
